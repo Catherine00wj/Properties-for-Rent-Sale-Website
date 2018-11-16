@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}login in page{% endblock %}
+{% block content %}
+   <div class="container">
+        <div class="col-lg">
+            <h2 class="text-capitalize text-center"> welcome to login to our page</h2>
+                <form class="login" action="/login/login" method="post">
+                        <div class="alert-danger" >{{ Error }}</div>
+                    {% csrf_token %}
+                    <div class="form-group username-input login-input">
+                        <label for="username" class="pretitle">username:</label>
+                        <input type="text" name="username" class="form-inline" id="username" placeholder="your username here" >
+                    </div>
+                    <div class="form-group password-input login-input" >
+                        <label for="password" class="pretitle" >password:</label>
+                        <input type="password"  name="password" class="form-inline" id="password" placeholder="your password here">
+                    </div>
+                    <button type="submit" class="btn btn-submit">submit</button>
+                </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+*{ margin:0; padding:0; border:none;}
+.kv{ background:url(/static/images/bannerV2.jpg) center center no-repeat; height:533px; background-size: cover}
+.kv ul.nav{ overflow:hidden;width:60%;margin:0 auto; padding-top:3%}
+.kv ul.nav li{ float:left; list-style:none; height:50px;padding:0 1%; width:12.66%; text-align:center}
+.kv ul.nav li:nth-child(3){width:24.66%;}
+.kv ul.nav li img{ height:16px;}
+.kv ul.nav li a{ color:#fff; text-decoration:none; font-size:16px; font-weight:bold}
+.kv h1{    width: 100%;
+    margin: 6% auto;
+    color: #fff;
+    font-size: 47px;
+    text-align: center;}

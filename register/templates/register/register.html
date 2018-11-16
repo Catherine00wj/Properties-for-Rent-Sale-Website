@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}register{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="col-lg">
+        <h2 class="text-capitalize text-center">welcome to register</h2>
+            <form class="register" action="/register/" method="post">
+                {% if wrong %}
+                <div class="alert-danger" >{{ wrong }}</div>
+                {% endif %}
+                {% csrf_token %}
+                <div class="form-group username-input login-input1">
+                        <label for="username" class="pretitle">UserName:</label>
+                        <input type="text" name="username" class="form-inline" id="username" placeholder="username,but not your actual name" >
+                    </div>
+
+                <div class="form-group password-input-input login-input1">
+                        <label for="password1" class="pretitle">Password:</label>
+                        <input type="password" name="password1" class="form-inline" id="password1" placeholder="Password here" >
+                    </div>
+
+                <div class="form-group password-input-input login-input1">
+                        <label for="password2" class="pretitle">Password:</label>
+                        <input type="password" name="password2" class="form-inline" id="password2" placeholder="Password here" >
+                    </div>
+
+                <div class="form-group password-input login-input">
+                    {{ form.check.errors }}
+                    <label for="username" class="pretitle">Check:</label>
+                    {{ form.check }}
+                </div>
+                <button type="submit" class="btn btn-submit">submit</button>
+            </form>
+        </div>
+
+    </div>
+{% endblock %}
+

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}user information input{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="col-lg">
+            <h2 class="text-capitalize text-center">welcome to input your detail information</h2>
+            <form class="register" action="/register/userinfoin" method="post">
+                {% if errormessage %}
+                <div class="alert-danger" >{{ errormessage }}</div>
+                {% endif %}
+
+                {% csrf_token %}
+
+                <div class="form-group username-input login-input1">
+                        <label for="givenname" class="pretitle">Givenname:</label>
+                        <input type="text" name="givenname" class="form-inline" id="givenname" placeholder="your givenname/firstname" >
+                    </div>
+
+                <div class="form-group password-input-input login-input1">
+                        <label for="familyname" class="pretitle">Familyname:</label>
+                        <input type="text" name="familyname" class="form-inline" id="familyname" placeholder="your familyname/lastname" >
+                    </div>
+                <div class="form-group password-input-input login-input1">
+                        <label for="birthday" class="pretitle">Birthday:</label>
+                        <input type="text" name="birthday" class="form-inline" id="birthday" placeholder="your birthday must be like year(4)-month(2)-day(2)" >
+                    </div>
+                <div class="form-group password-input-input login-input1">
+                        <label for="email" class="pretitle">Email:</label>
+                        <input type="text" name="email" class="form-inline" id="email" placeholder="your email ,will check later" >
+                    </div>
+                <div class="form-group password-input-input login-input1">
+                        <label for="job" class="pretitle">Job:</label>
+                        <input type="text" name="job" class="form-inline" id="job" placeholder="Your job" >
+                    </div>
+                <div class="form-group password-input-input login-input1">
+                        <label for="mobile" class="pretitle">Mobile:</label>
+                        <input type="text" name="mobile" class="form-inline" id="mobile" placeholder="Your mobile phone" >
+                    </div>
+                <div class="form-group password-input login-input">
+                    <label for="gender" class="pretitle">gender:</label>
+
+                    {{ userforms.gender }}
+                </div>
+                <div class="form-group password-input login-input">
+                        {{ userforms.check.errors }}
+
+                        <label for="check" class="pretitle">Check:</label>
+                        {{ userforms.check }}
+                </div>
+
+                <button type="submit" class="btn btn-submit">submit</button>
+            </form>
+        </div>
+
+    </div>
+{% endblock %}
+

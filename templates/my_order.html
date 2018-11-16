@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}orderlist{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="col-lg">
+        <table class="table table-condensed text-capitalize3">
+            <h2 class="text-capitalize2 text-center" > My Bookings</h2>
+            <thead>
+            <tr>
+                <th>Order Number</th>
+                <th>Check-In Date</th>
+                <th>Check-Out Date</th>
+                <th>Make Comments</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for line in order_list %}
+            <tr>
+                <td>{{ line.order_id }}</td>
+                <td>{{ line.check_in}}</td>
+                <td>{{ line.check_out }}</td>
+                <td><a class="btn btn-info" href="/comment/?id={{ line.order_id }}">Make Comments</a></td>
+                <td><a class="btn btn-danger" href="delete/?id={{ line.id }}">Delete</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    </div>
+{% endblock %}

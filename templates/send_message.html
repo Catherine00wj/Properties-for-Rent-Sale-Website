@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}send_messages{% endblock %}
+{% block content %}
+    <div class="container">
+    <div class="col-lg">
+        <form method="post">
+            <h2><p class="text-capitalize2 text-center"> BOOKING INFORMATION </p></h2>
+            <h4><p class="text-capitalize2 text-center"> Include a few details so the owner/manager can contact you. </p></h4>
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="first_name" class="text-capitalize1 text-center">* First Name</label>
+                <input id="first_name" type="text" name="first_name" class="form-control" placeholder="Please Input Your First Name">
+            </div>
+            <div class="form-group">
+                <label for="last_name" class="text-capitalize1 text-center">* Last Name</label>
+                <input id="last_name" type="text" name="last_name" class="form-control" placeholder="Please Input Your Last Name">
+            </div>
+            <div class="form-group">
+                <label for="phone" class="text-capitalize1 text-center">* Phone</label>
+                <input id="phone" type="number" name="phone" class="form-control" placeholder="Please Input Your Phone Number">
+            </div>
+            <div class="form-group">
+                <label for="email_add" class="text-capitalize1 text-center">* Email</label>
+                <input id="email_add" type="email" name="email_add" class="form-control" placeholder="Please Input Your Email">
+            </div>
+            <div class="form-group">
+                <label for="messages" class="text-capitalize1 text-center">* Messages To Owner/Manager</label>
+                <textarea id="messages" type="text" name="messages" class="form-control" rows="5" placeholder="Please input your personal request and Check-in Dates so that we could arrange you. Thanks!"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success btn-lg pull-left">Submit</button>
+            <a class="btn btn-primary btn-lg pull-right" href="/message/inbox/">Return Inbox</a>
+        </form>
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{#<style type="text/css">#}
+{#th{ text-align: center }#}
+{#</style>#}
+
+{% block title %}Resource Display{% endblock %}
+{% block content %}
+    <div class="page-header text-center">
+        <h1>Resource Display
+        </h1>
+
+<div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+    <div class="panel panel-default text-center">
+        <div class="panel-body ">
+            <table class="table table-condensed table-hover">
+        <thead class="text-center">
+{#            <th>uid</th>#}
+            <th>City</th>
+            <th>Community</th>
+{#            <th>address</th>#}
+            <th>Property</th>
+            <th>Type</th>
+            <th>Area</th>
+            <th>Bedrooms</th>
+            <th>Bathrooms</th>
+            <th>Parking</th>
+            <th>Expectmoney</th>
+            <th>Phone</th>
+{#            <th>description</th>#}
+            <th>Photos</th>
+        </thead>
+        <tbody >
+            {% for line in ResourceInfor %}
+            <tr class="text-left" onclick="location.href='/InforRealease/detail/?id={{ line.id }}' ">
+{#                <td>{{ line.uid}}</td>#}
+                <td>{{ line.city}}</td>
+                <td>{{ line.community }}</td>
+{#                <td>{{ line.address}}</td>#}
+                <td>{{ line.property}}</td>
+                <td>{{ line.type}}</td>
+                <td>{{ line.area}}</td>
+                <td>{{ line.bedrooms}}</td>
+                <td>{{ line.bathrooms}}</td>
+                <td>{{ line.parking}}</td>
+                <td>{{ line.expectmoney}}</td>
+                <td>{{ line.phone}}</td>
+{#                <td>{{ line.description}}</td>#}
+                <td>  <img src= "/media/{{line.img}}" width="80" height="50"><br/> </td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+        </div>
+    </div>
+
+
+    </div>
+</div>
+
+
+{% endblock %}

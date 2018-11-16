@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}InforRealease{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="col-lg">
+            <form class="form-group" action="/InforRealease/" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h2 class="text-capitalize text-center" >Welcome to release resources</h2>
+                <div class="form-group" style="color: white">
+                    <label > * City</label>
+                    <input type="text" name="city" class="form-control" placeholder="must input the city you are in"/>
+                </div>
+                <div class="form-group" style="color: white">
+                    <label >* Community</label>
+                    <input type="text" name="community" class="form-control" placeholder="must input the community you are in"/>
+                </div>
+                <div class="form-group" style="color: white">
+                    <label>* Address</label>
+                    <input type="text" name="address" class="form-control" placeholder="must input the address you are in"/>
+                </div>
+                <div class="form-group" style="color: white">
+                    <label>* Property</label>
+                    <input type="text" name="property" class="form-control" placeholder="must input the property"/>
+                </div>
+                <div class="form-group"  style="color: white">
+                    <label>* Type</label>
+                    <input type="text" name="type" class="form-control" placeholder="must input rent or sell"/>
+                </div>
+                <div class="form-group" style="color: white">
+                    <label>* Area</label>
+                    <input type="text" name="area" class="form-control" placeholder="must input the size"/>
+                </div>
+                <div class="form-group" >
+                    <label style="color: white">* Bedrooms</label>
+                    <select class="selectpicker" name="bedrooms">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <label style="color: white">* Bathrooms </label>
+                    <select class="selectpicker" name="bathrooms">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <label style="color: white">* Parking</label>
+                    <select class="selectpicker" name="parking">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                </div>
+                <div class="form-group" style="color: white">
+                    <label >* Expect Money</label>
+                    <input type="number" name="expectmoney" class="form-control" placeholder="must input profit you expected"/>
+                </div>
+                <div class="form-group" style="color: white">
+                    <label>* Phone</label>
+                    <input type="tel" name="phone" class="form-control" placeholder="must input your phone number"/>
+                </div>
+                <div class="form-group" style="color: white">
+                    <label>* Description</label>
+                    <input type="text" name="description" class="form-control" placeholder="must input the description for your house"/>
+                </div>
+                <div>
+                    <label style="color: white">* Upload Photos</label>
+                    <input type="file" name="img" class="form-control" multiple/>
+                </div>
+                &nbsp;
+                &nbsp;<br><br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    &nbsp;
+    &nbsp;
+
+{% endblock %}

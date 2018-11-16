@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}send_order{% endblock %}
+{% block content %}
+    <div class="container">
+    <div class="col-lg">
+        <form method="post">
+            <h2><p class="text-capitalize2 text-center"> BOOKING INFORMATION </p></h2>
+            <h4><p class="text-capitalize2 text-center"> Include a few details about your travel arrangements. </p></h4>
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="first_name" class="text-capitalize1 text-center">Check-In Date</label>
+                <input id="first_name" type="date" name="check_in" class="form-control" placeholder="Please Input Your Check-In Date, Format DD-MM-YYYY">
+            </div>
+            <div class="form-group">
+                <label for="last_name" class="text-capitalize1 text-center">Check-Out Date</label>
+                <input id="last_name" type="date" name="check_out" class="form-control" placeholder="Please Input Your Check-Out Date, Format DD-MM-YYYY">
+            </div>
+            <button type="submit" class="btn btn-success btn-lg pull-left">Submit</button>
+            <a class="btn btn-primary btn-lg pull-right" href="/comment/show_order/">See My Order</a>
+        </form>
+    </div>
+    </div>
+{% endblock %}
+
